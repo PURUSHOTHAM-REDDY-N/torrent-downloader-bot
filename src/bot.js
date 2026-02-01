@@ -113,9 +113,9 @@ bot.onText(/magnet:\?xt=urn:btih:[a-zA-Z0-9]+/, async (msg, match) => {
     // console.log('Torrent metadata', torrent.files);
   })
 
-  torrent.on("wire", () => {
-    console.log("Torrent wire");
-  });
+  // torrent.on("wire", () => {
+  //   console.log("Torrent wire");
+  // });
 
   torrent.on("error", (err) => {
     bot.sendMessage(chatId, `❌ Torrent error: ${err.message}`);
