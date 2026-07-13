@@ -28,7 +28,9 @@ bot.onText(/magnet:\?xt=urn:btih:[a-zA-Z0-9]+/, async (msg, match) => {
   );
   const messageId = statusMessage.message_id;
 
-  const torrent = client.add(magnetLink, { path: "./downloads" });
+  const torrent = client.add(magnetLink, { path: "./downloads", announce: [
+    "wss://tracker.btorrent.xyz:443",
+  ] });
 
   let lastProgress; // Track the last progress percentage
 
